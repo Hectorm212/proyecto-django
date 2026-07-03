@@ -1,0 +1,47 @@
+{% extends "inicio/encabezado.html" %}
+
+{% 
+    {% block titulo %} Principal {% endblock titulo %}
+%}
+
+{% block encabezado %}
+				<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Alumnos
+				    <small>Lista de Alumnos </small></h3>
+				</div>
+				
+			</div>
+			<!-- /Encabezado-->
+{% endblock encabezado %}
+
+
+{% block contenido %}'
+		<!-- Contenido Principal-->
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Foto</th>
+					<th>Matricula</th>
+					<th>Nombre</th>
+					<th>Carrera</th>
+					<th>Turno</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for alumno in alumnos %}
+					<tr>
+						<td class="text-center">
+							<img src = "{{alumno.imagen.url}}" alt="" class="img-media">
+						</td>
+						<td class="text-semibold">{{alumno.matricula}}</td>
+						<td class="text-semibold">{{alumno.nombre}}</td>
+						<td class="text-semibold">{{alumno.carrera}}</td>
+						<td class="text-semibold">{{alumno.turno}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+        <!-- /Contenido Principal-->'
+{% endblock %}
