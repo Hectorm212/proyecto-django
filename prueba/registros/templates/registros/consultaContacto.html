@@ -1,0 +1,49 @@
+{% extends "inicio/encabezado.html" %} {% load static %}
+
+    {% block image %}
+        <img src="{% static 'inicio/images/contacto.png' %}" alt="Home">
+        <div class="user-info">
+            Contacto <span>DGS</span> 
+        </div>
+    {% endblock image %}
+	
+		{% block encabezado %}
+		<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Comentarios
+				    <small>Lista de comentarios</small></h3>
+				</div>
+			</div>
+			<!-- /Encabezado-->
+			
+		{% endblock encabezado %}
+
+{% block contenido %}
+		<!-- Contenido Principal-->
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Usuario</th>
+					<th>Mensaje</th>
+					<th>Editar</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for comentario in comentarios %}
+					<tr>
+						<td class="text-semibold">{{comentario.usuario}}</td>
+						<td class="text-semibold">{{comentario.mensaje}}</td>
+						<td cllass="text-center">
+							<a href="" class="btn btn-primary">Editar</a>
+						</td>
+						<td class="text-center">
+							<a href=""class="btn btn-danger">Eliminar</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+        <!-- /Contenido Principal-->'
+{% endblock %}

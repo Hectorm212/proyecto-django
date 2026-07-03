@@ -14,10 +14,10 @@ def registros(request):
 def registrar(request):
     if request.method == 'POST':
         form = ComentarioContactoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            comentarios = ComentarioContacto.objects.all()
-            return render(request, 'registros/contacto.html', {'comentarios': comentarios})
+        if form.is_valid(): #si es valido el formulario
+            form.save() #inserta el registro en la tabla
+            comentarios = ComentarioContacto.objects.all() #comentarios es igual a todos los comentarios de la tabla ComentarioContacto
+            return render(request, "registros/consultaContacto.html", {'comentarios': comentarios}) #retorna al usuario a la vista de consultaContacto.html
     form = ComentarioContactoForm()
     #Si sale mal reenvian al formulario los datos ingresados
     return render(request, 'registros/contacto.html', {'form': form})
