@@ -1,0 +1,65 @@
+{% extends "inicio/encabezado.html" %} {% load static %}
+
+    {% block titulo %} Cargar Archivos {% endblock titulo %}
+
+    {% block image %}
+        <img src="{% static 'inicio/images/contacto.png' %}" alt="Home">
+        <div class="user-info">
+            Contacto <span>DGS</span> 
+        </div>
+    {% endblock image %}
+	
+		{% block encabezado %}
+		<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Envia tu documento
+				    <small>Ingresa tu información</small></h3>
+				</div>
+			</div>
+			<!-- /Encabezado-->
+			
+				{% endblock encabezado %}
+				
+
+
+	
+{% block contenido %}
+			<!-- Formulario -->
+			<form class="form-horizontal" action="{% url 'subir'%}" method="POST" role="form" enctype="multipart/form-data">
+				{% csrf_token %}
+	            <div class="panel panel-default">
+	                <div class="panel-body">
+
+				        <div class="form-group">
+				            <label class="col-sm-2 control-label text-right">Titulo</label>
+				            <div class="col-sm-10">
+				            	<input type="text" class="form-control" name="titulo">
+				            </div>
+				        </div>
+						
+                        <div class= "form-group">
+				            <label class="col-sm-2 control-label text-right">Descripcion:</label>
+                            <div class="col-sm-10">
+                                <textarea cols="100" rows="10" name="descripcion"></textarea>
+                            </div>
+                        </div>
+
+				        <div class="form-group">
+				            <label class="col-sm-2 control-label text-right">Archivo:</label>
+				            <div class="col-sm-10">
+				            	<input type="file" class="form-control" name="archivo">
+				            </div>
+				        </div>
+
+				        
+                        <div class="form-actions text-right">
+                        	<input type="submit" value="Enviar" class="btn btn-primary">
+                        </div>
+
+				    </div>
+				</div>
+			</form>
+		<!-- Fin del Formulario -->
+		<!-- /Contenido Principal-->
+{% endblock %}
