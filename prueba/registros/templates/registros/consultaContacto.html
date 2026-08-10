@@ -27,7 +27,7 @@
 					<th>Usuario</th>
 					<th>Mensaje</th>
 					<th>Editar</th>
-					<th></th>
+					<th>Eliminar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,10 +36,10 @@
 						<td class="text-semibold">{{comentario.usuario}}</td>
 						<td class="text-semibold">{{comentario.mensaje}}</td>
 						<td cllass="text-center">
-							<a href="" class="btn btn-primary">Editar</a>
+							<a href="{% url 'editar' comentario.id %}" class="btn btn-primary">Editar</a>
 						</td>
 						<td class="text-center">
-							<a href=""class="btn btn-danger">Eliminar</a>
+							<a href="{% url 'eliminar' comentario.id %}"class="btn btn-danger">Eliminar</a>
 						</td>
 					</tr>
 				{% endfor %}
