@@ -32,6 +32,26 @@ urlpatterns = [
     path('formulario/', formulario, name='formulario'),
     path('ejemplo/', ejemplo, name="ejemplo"),
     path('registrar/', views_registros.registrar, name="Registrar"),
+    path('consultarContacto/', views_registros.consultarContacto, name='consultarContacto'),
+    path('eliminarComentario/<int:id>/', views_registros.eliminarComentario, name='eliminar'),
+    path('formEditarComentario/<int:id>/', views_registros.consultarComentarioIndivicual, name='consultarIndividual'),
+    path('editarComentario/<int:id>/', views_registros.editarComentario, name='editar'),
+    path('consultas/', views_registros.consultas, name="consultas"),
+    path('consultar1/', views_registros.consultar1, name="consultar1"),
+    path('consultar2/', views_registros.consultar2, name="consultar2"),
+    path('consultar3/', views_registros.consultar3, name="consultar3"),
+    path('consultar4/', views_registros.consultar4, name="consultar4"),
+    path('consultar5/', views_registros.consultar5, name="consultar5"),
+    path('consultar6/', views_registros.consultar6, name="consultar6"),
+    path('consultar7/', views_registros.consultar7, name="consultar7"),
+    path('consultar8/', views_registros.consultar8, name="consultar8"),
+    path('consultar9/', views_registros.consultar9, name="consultar9"),
+    path('consultasSQL/', views_registros.consultasSQL, name="consultasSQL"),
+    path('consultasSQL2/', views_registros.consultasSQL2, name="consultasSQL2"),
+    path('consultasSQL3/', views_registros.consultasSQL3, name="consultasSQL3"),
+    path('consultasSQL4/', views_registros.consultasSQL4, name="consultasSQL4"),
+    path('subir/', views_registros.archivos, name='subir'),
+
 ]
 
 if settings.DEBUG:
